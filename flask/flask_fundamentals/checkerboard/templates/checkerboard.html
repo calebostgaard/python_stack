@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/checkerboard.css') }}">
+</head>
+
+<style>
+
+.box1 {
+    background-color: {{color1}};
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    border: black solid 5px;
+    box-shadow: 0 0 20px black;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+}
+
+.box2 {
+    background-color: {{color2}};
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    border: black solid 5px;
+    box-shadow: 0 0 20px black;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+}
+
+</style>
+
+
+
+<body>
+
+    <h1>Let's Build a Checkerboard! ㋡</h1>
+
+
+    {% for i in range(times1) %}
+    <div class="group">
+        {% for j in range(times2) %}
+        <div class="box{{(i+j)%2+1}}"></div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+
+
+    <div id="instructions">
+        <h3>Customization Instructions:</h3>
+        <h4>If you would like to personalize the checkerboard... <br>
+        </h4>
+        <ul>
+            <li>http://localhost:5000 - will display 8 by 8 checkerboard</li>
+            <li>http://localhost:5000/x - will display 8 by x checkerboard</li>
+            <li>http://localhost:5000/x/y - will display x by y checkerboard.  
+            For example, http://localhost:5000/10/10 will display a 10 by 10 
+            checkerboard.</li>
+            <li>http://localhost:5000/x/y/color1/color2 will display x by y 
+            checkerboard, with the respective chosen colors.</li>
+        </ul>
+    </div>
+
+</body>
+</html>

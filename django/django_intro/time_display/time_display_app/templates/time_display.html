@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Display</title>
+</head>
+<style>
+    body {
+        background-image: linear-gradient(135deg, #ffffff 37.50%, #e6effa 37.50%, #e6effa 50%, #ffffff 50%, #ffffff 87.50%, #e6effa 87.50%, #e6effa 100%);
+        background-size: 5.66px 5.66px;
+        font-family: 'Comic Sans MS', Courier, monospace;
+    }
+    #header {
+        background-color: white;
+        margin: 25px 15% 0px 15%;
+        border: black solid 5px;
+        text-align: center;
+        padding: 20px;
+        font-size: 50px;
+        text-shadow: 2px 2px 4px rgb(27, 145, 147);
+    }
+    #time {
+        background-color: white;
+        margin: 25px 30% 0px 30%;
+        border: black solid 5px;
+        text-align: center;
+        padding: 20px;
+        text-shadow: 2px 2px 4px rgb(27, 145, 147);
+    }
+</style>
+<body>
+    <h2 id="header">Current Time and Date:</h2>
+    <h1 id="time">{{time}}</h1>
+</body>
+</html>

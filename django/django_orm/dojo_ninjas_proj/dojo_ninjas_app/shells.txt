@@ -1,0 +1,49 @@
+//Query: Create 3 new dojos
+Dojo.objects.create(name = "Los Angeles", city = "Los Angeles", state = "CA")
+Dojo.objects.create(name = "San Jose", city = "San Jose", state = "CA")
+Dojo.objects.create(name = "Bellevue", city = "Bellevue", state = "WA")
+
+//Query: Delete the 3 dojos you just created
+d = Dojo.objects.get(id=1)
+d.delete()
+d = Dojo.objects.get(id=2)
+d.delete()
+d = Dojo.objects.get(id=3)
+d.delete()
+
+//Query: Create 3 more dojos
+Dojo.objects.create(name = "Chicago", city = "Chicago", state = "IL")
+Dojo.objects.create(name = "Dallas", city = "Dallas", state = "TX")
+Dojo.objects.create(name = "Oakland", city = "Oakland", state = "CA")
+
+//Query: Create 3 ninjas that belong to the first dojo
+Ninja.objects.create(dojo=Dojo.objects.get(id=4), first_name="Caleb", last_name="Ostgaard")
+Ninja.objects.create(dojo=Dojo.objects.get(id=4), first_name="Ryan", last_name="Ivers")
+Ninja.objects.create(dojo=Dojo.objects.get(id=4), first_name="Rachel", last_name="Lorentson")
+
+//Query: Create 3 ninjas that belong to the second dojo
+Ninja.objects.create(dojo=Dojo.objects.get(id=5), first_name="John", last_name="Doe")
+Ninja.objects.create(dojo=Dojo.objects.get(id=5), first_name="Jane", last_name="Smith")
+Ninja.objects.create(dojo=Dojo.objects.get(id=5), first_name="Mike", last_name="Paul")
+
+//Query: Create 3 ninjas that belong to the third dojo
+Ninja.objects.create(dojo=Dojo.objects.get(id=6), first_name="Riley", last_name="Brown")
+Ninja.objects.create(dojo=Dojo.objects.get(id=6), first_name="Jimmy", last_name="Reagan")
+Ninja.objects.create(dojo=Dojo.objects.get(id=6), first_name="Sam", last_name="Salazar")
+
+
+//Query: Retrieve all the ninjas from the first dojo
+site = Dojo.objects.first()
+site.ninjas.all()
+
+//Query: Retrieve all the ninjas from the last dojo
+site = Dojo.objects.last()
+site.ninjas.all()
+
+//Query: Retrieve the last ninja's dojo
+site = Ninja.objects.last()
+site.dojo
+
+//Query: Create new Dojo:
+Dojo.objects.create(name = "Hawaii", city = "Honolulu", state = "HI")
+

@@ -1,0 +1,25 @@
+CREATE
+User.objects.create(first_name="Caleb", last_name="Ostgaard", email_address="caleb@gmail.com", age=25)
+User.objects.create(first_name="Ryan", last_name="Ivers", email_address="ryan@gmail.com", age=29)
+User.objects.create(first_name="Rachel", last_name="Lorentson", email_address="rachel@gmail.com", age=24)
+
+RETRIEVE
+User.objects.all() //show all info by adding .values()
+User.objects.last() //show all info by adding .values()
+User.objects.first() //show all info by adding .values()
+
+
+CHANGE 
+user_to_update = User.objects.get(id=3)
+user_to_update.last_name = "Pancakes"
+user_to_update.save()
+
+
+DELETE
+user_to_delete = User.objects.get(id=2)
+user_to_delete.delete()
+
+GET (all users by first name)
+User.objects.all().order_by("first_name")
+User.objects.all().order_by("-first_name")
+

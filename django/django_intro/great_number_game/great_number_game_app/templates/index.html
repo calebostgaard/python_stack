@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Number Game</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+
+<body>
+    <div id="main">
+        <h1>Welcome to the <br>Great Number Game!</h1>
+        <h2>I am thinking of a number between 1 and 100</h2>
+        <h2>Take a guess!</h2>
+        {% if 'message' in request.session %}
+        <div id="messagebox1" style= "background-color: {{request.session.color}}">
+            <h2>{{request.session.message}}</h2>
+            <h2>Attempts: {{request.session.counter}}</h2>
+        </div>
+        {% endif %}
+        {% if request.session.randomnumber != request.session.guess and request.session.counter < 5 %}
+        <form action='/submit' method='post'>
+            {% csrf_token %}
+            <textarea name="guess" rows="1" cols="10"></textarea>
+            <br>
+            <button type='submit'>Submit</button>
+        </form>
+        {% endif %}
+        {% if request.session.randomnumber == request.session.guess or request.session.counter >= 5 %}
+            <button onClick = "location.href='http://localhost:8000/playagain'">Play Again</button>
+        {% endif %}
+    </div>
+    </body>
+</html>

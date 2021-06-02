@@ -1,0 +1,84 @@
+body {
+    background-image: linear-gradient(135deg, #ffffff 37.50%, #e6effa 37.50%, #e6effa 50%, #ffffff 50%, #ffffff 87.50%, #e6effa 87.50%, #e6effa 100%);
+    background-size: 5.66px 5.66px;
+    font-family: 'Comic Sans MS', Courier, monospace;
+}
+
+.mycontainer {
+    text-shadow: 2px 2px 4px rgb(27, 145, 147);
+    padding: 10px;
+    width: 95%;
+    background-color: rgb(236, 255, 251);
+    border: black solid 5px;
+    box-shadow: 2px 2px 4px rgb(27, 145, 147);
+    border-radius: 5px;
+    display: flex;
+    margin: 20px;
+}
+
+#mainhead {
+    text-shadow: 2px 2px 4px rgb(27, 145, 147);
+    padding: 10px;
+    width: 80%;
+    margin: 20px;
+    display: flex;
+}
+
+
+#subhead {
+    text-shadow: 2px 2px 4px rgb(27, 145, 147);
+    padding-top: 30px;
+    width: 15%;
+    box-shadow: 2px 2px 4px rgb(27, 145, 147);
+    margin: 5px;
+    text-align: center;
+    background-color:  rgb(27, 145, 147);
+    color: white;
+    box-shadow: 2px 2px 4px rgb(27, 145, 147);
+    border-radius: 5px;
+    border: black solid 1px;
+    text-decoration: none;
+    font-size: 20pt;
+}
+
+
+.nextcontainer {
+    padding: 10px;
+    width: 95%;
+    background-color: rgb(236, 255, 251);
+    border: black solid 5px;
+    box-shadow: 2px 2px 4px rgb(27, 145, 147);
+    border-radius: 5px;
+    margin: 20px;
+    padding-bottom: 50px;
+}
+
+.nextcontainer h5, li{
+    font-size: 18px;
+
+}
+
+.nextcontainer h1 {
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgb(27, 145, 147);
+    text-decoration: underline;
+}
+
+#mainbox {
+    display: flex;
+}
+
+a {
+    color: rgb(27, 145, 147);
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.book_modules {
+    padding: 20px;
+    width: 50%;
+    margin: 20px;
+}
+

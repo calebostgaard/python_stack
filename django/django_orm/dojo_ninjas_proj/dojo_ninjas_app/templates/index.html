@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojos & Ninjas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <div id="header">
+        <div class="add">
+            <h1>Add a Dojo</h1>
+            <form id="addform1" action='/add_dojo' method='post'>
+                {% csrf_token %}
+                <label for="dojo_name">Name:</label>
+                    <input type='text' name='dojo_name'>
+                    <br>
+                <label for="dojo_city">City:</label>
+                    <input type='text' name='dojo_city'>
+                    <br>
+                <label for="dojo_state">State:</label>
+                    <input type='text' name='dojo_state'>
+                <br>
+                <button type='submit'>Add</button>
+            </form>
+        </div>
+        <div class="add">
+            <h1>Add a Ninja</h1>
+            <form id="addform2" action='/add_ninja' method='post'>
+                {% csrf_token %}
+                <label for="ninja_first_name">First Name:</label>
+                    <input type='text' name='ninja_first_name'>
+                <br>
+                <label for="ninja_last_name">Last Name:</label>
+                    <input type='text' name='ninja_last_name'>
+                    <br>
+                <label for="dojo_id">Dojo:</label>
+                <select id="dojo" name="dojo_id">
+                    {% for site in all_the_dojos %}
+                    <option value="{{site.id}}">{{site.name}}</option>
+                    {% endfor %}
+                </select>
+                <br>
+                <button type='submit'>Add</button>
+            </form>
+        </div>
+    </div>
+    <div id="catalog">
+        <h1>All the Dojos</h1>
+        <div id="list">
+                {% for site in all_the_dojos %}
+                <div id="dojoline">
+                    <p>Ninjas at the {{site.name}} Dojo ({{site.ninjas.count}})</p>
+                    <form id="deletedojo" action='/delete_dojo' method='post'>
+                        {% csrf_token %}
+                        <button value = "{{site.id}}" name="delete_it" type='submit'>x</button>
+                    </form>
+                </div>
+                <ul>
+                    {% for student in site.ninjas.all %}
+                    <li>{{student.first_name}} {{student.last_name}}</li>
+                    {% endfor %}
+                </ul>
+                {% endfor %}
+        </div>
+    </div>
+    </body>
+    </html>

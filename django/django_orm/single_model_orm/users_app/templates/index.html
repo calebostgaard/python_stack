@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C + R Users</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <div id="header">
+        <h1>All the Users</h1>
+        <table id="user_table">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+            </tr>
+            {% for user in all_the_users %}
+            <tr>
+                <td>{{user.id}}</td>
+                <td>{{user.first_name}} {{user.last_name}}</td>
+                <td>{{user.email_address}}</td>
+                <td>{{user.age}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div id="inputfooter">
+        <h1>Add a User</h1>
+        <form id="addform" action='/add_user' method='post'>
+            {% csrf_token %}
+            <div class="input1">
+                <div class = "value">
+                    <label for="first_name">First Name:</label>
+                    <input type='text' name='first_name'>
+                </div>
+                <div class = "value">
+                    <label for="last_name">Last Name:</label>
+                    <input type='text' name='last_name'>
+                </div>
+            </div>
+            <div class="input2">
+                <div class = "value">
+                    <label for="email">Email:</label>
+                    <input type='text' name='email_address'>
+                </div>
+                <div class = "value">
+                    <label for="age">Age:</label>
+                    <input type='text' name='age'>
+                </div>
+            </div>
+            <br>
+            <button type='submit'>Add</button>
+        </form>
+    </div>
+    <div id="deletefooter">
+        <h1>Delete a User</h1>
+        <form id="deleteform" action='/delete_user' method='post'>
+            {% csrf_token %}
+            <div class="input1">
+                <div class = "value">
+                    <label for="id">ID:</label>
+                    <input type='text' name='delete_user'>
+                    <button type='submit'>Delete User</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

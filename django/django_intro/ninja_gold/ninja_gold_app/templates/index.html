@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Gold</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+
+<body>
+    <h1 id="header">"Ninja Gold": The Game</h1>
+    <div id="gold">
+        <h1>Your Gold:</h1>
+        <p>{{request.session.gold_count}}</p>
+    </div>
+    <div id="routes">
+        <div class="path">
+            <h2>Farm</h2>
+            <p>(earns 10-20 golds)</p>
+            <form action='/process_money' method='post'>
+                {% csrf_token %}
+                <input value="Find Gold!" type='submit'>
+                <input value="farm" type='hidden' name='find_gold'>
+            </form>
+        </div>
+        <div class="path">
+            <h2>Cave</h2>
+            <p>(earns 5-10 golds)</p>
+            <form action='/process_money' method='post'>
+                {% csrf_token %}
+                <input value="Find Gold!" type='submit'>
+                <input value="cave" type='hidden' name='find_gold'>
+            </form>
+        </div>
+        <div class="path">
+            <h2>House</h2>
+            <p>(earns 2-5 golds)</p>
+            <form action='/process_money' method='post'>
+                {% csrf_token %}
+                <input value="Find Gold!" type='submit'>
+                <input value="house" type='hidden' name='find_gold'>
+            </form>
+        </div>
+        <div class="path">
+            <h2>Casino</h2>
+            <p>(earns/takes 0-50 golds)</p>
+            <form action='/process_money' method='post'>
+                {% csrf_token %}
+                <input value="Find Gold!" type='submit'>
+                <input value="casino" type='hidden' name='find_gold'>
+            </form>
+        </div>
+    </div>
+    <div id="activities">
+        <h1>Activities:</h1>
+        <div id="activity">
+            {{request.session.activity|safe}}
+        </div>
+    </div>
+    <button id = "refresh" onClick = "location.href='http://localhost:8000/start_over'">Start Over</button>
+</body>
+
+</html>

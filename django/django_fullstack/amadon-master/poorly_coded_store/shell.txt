@@ -1,0 +1,9 @@
+CREATE 
+Product.objects.create(description = "T-shirt", price = 19.99)
+Product.objects.create(description = "Jeans", price = 49.99)
+Product.objects.create(description = "Jacket", price = 89.99)
+Product.objects.create(description = "Hoodie Sweatshirt", price = 59.99)
+Product.objects.create(description = "Crewneck Sweater", price = 49.99)
+Product.objects.create(description = "Shoes", price = 79.99)
+Product.objects.create(description = "Belt", price = 19.99)
+Product.objects.create(description = "Socks", price = 8.99)

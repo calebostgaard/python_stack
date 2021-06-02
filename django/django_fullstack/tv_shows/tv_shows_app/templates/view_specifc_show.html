@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read (One)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/view_shows.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1 id="mainhead">TV Show {{specific_show.id}}</h1>
+        <div id="form">
+            <p><span class="underline">Title:</span> {{specific_show.title}}</p>
+            <p><span class="underline">Network:</span> {{specific_show.network}}</p>
+            <p><span class="underline">Release Date:</span> {{specific_show.release_date}}</p>
+            <p><span class="underline">Description:</span> {{specific_show.desc}}</p>
+            <div>
+                <a href="/shows/{{specific_show.id}}/edit"><button id="button" class="btn btn-dark">Edit</button></a>
+                <a href="/delete/{{specific_show.id}}"><button id="button" class="btn btn-dark">Delete</button></a>
+            </div>
+            <div id="go_back">
+                <p>(Go back to <a href="/shows">View All Shows</a>)</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <div id="main">
+        <h1>Counter</h1>
+        <p>{{request.session.counter}} Times</p>
+        <h2>Let's have some fun! Every time you refresh the page,
+            the counter will go up. Play with the buttons to see what else happens ㋡ 
+        </h2>
+        <a href="/"><button class="button">Add 1</button></a>
+        <br>
+        <a href="/2"><button class="button">Add 2</button></a>
+        <br>
+        <a href="/destroy_session"><button class="button">Destroy Session</button></a>
+    </div>
+</body>
+</html>

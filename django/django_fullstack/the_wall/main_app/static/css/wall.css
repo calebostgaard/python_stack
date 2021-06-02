@@ -1,0 +1,160 @@
+body {
+    background-image: linear-gradient(135deg, #ffffff 37.50%, #e6effa 37.50%, #e6effa 50%, #ffffff 50%, #ffffff 87.50%, #e6effa 87.50%, #e6effa 100%);
+    background-size: 5.66px 5.66px;
+    font-family: 'Comic Sans MS', Courier, monospace;
+}
+
+.mycontainer {
+    text-shadow: 2px 2px 4px rgb(27, 145, 147);
+    padding: 10px;
+    width: 95%;
+    background-color: rgb(236, 255, 251);
+    border: black solid 5px;
+    box-shadow: 2px 2px 4px rgb(27, 145, 147);
+    border-radius: 5px;
+    display: flex;
+    margin: 20px;
+}
+
+#mainhead {
+    text-shadow: 2px 2px 4px rgb(27, 145, 147);
+    padding: 10px;
+    width: 80%;
+    margin: 20px;
+    display: flex;
+    border-bottom: black solid 1px;
+}
+
+#pleft {
+}
+
+#pright {
+    padding-left: 40%;
+}
+
+.nextcontainer {
+    text-shadow: 2px 2px 4px rgb(27, 145, 147);
+    padding: 10px;
+    width: 95%;
+    background-color: rgb(236, 255, 251);
+    border: black solid 5px;
+    box-shadow: 2px 2px 4px rgb(27, 145, 147);
+    border-radius: 5px;
+    margin: 20px;
+}
+
+#subhead {
+    text-shadow: 2px 2px 4px rgb(27, 145, 147);
+    padding-top: 18px;
+    width: 10%;
+    box-shadow: 2px 2px 4px rgb(27, 145, 147);
+    margin: 20px;
+    text-align: center;
+    background-color:  rgb(27, 145, 147);
+    color: white;
+    box-shadow: 2px 2px 4px rgb(27, 145, 147);
+    border-radius: 5px;
+    border: black solid 1px;
+    text-decoration: none;
+}
+
+
+#button {
+    text-shadow: 2px 2px 4px rgb(27, 145, 147);
+    padding: 10px;
+    box-shadow: 2px 2px 4px rgb(27, 145, 147);
+    text-align: center;
+    background-color:  rgb(27, 145, 147);
+    color: white;
+    box-shadow: 2px 2px 4px rgb(27, 145, 147);
+    border-radius: 5px;
+    border: black solid 1px;
+    text-decoration: none;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+}
+
+.wallcontainer {
+    text-shadow: 2px 2px 4px rgb(27, 145, 147);
+    padding: 20px;
+    width: 95%;
+    background-color: rgb(236, 255, 251);
+    border: black solid 5px;
+    box-shadow: 2px 2px 4px rgb(27, 145, 147);
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.messagecontent {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: small;
+}
+
+.messagecontent p{
+    padding-left: 20px;
+    padding-right: 20px;
+    text-shadow: none;
+}
+
+.messagebox {
+    border: black solid 2px;
+    padding: 15px;
+    margin: 10px;
+    box-shadow: 2px 2px 4px rgb(27, 145, 147);
+    border-radius: 5px;
+    background-color: rgb(168, 248, 248);
+}
+
+.messagebox button{
+    border: black solid 1px;
+    padding: 1px;
+    border-radius: 5px;
+    background-color: rgb(253, 193, 193);
+    color: red;
+    text-decoration: none;
+    padding-bottom: 5px;
+    width: 40px;
+    box-shadow: 2px 2px 4px rgb(27, 145, 147);
+}
+
+.commentbox {
+    border: black solid 2px;
+    padding: 15px;
+    margin: 10px;
+    box-shadow: 2px 2px 4px rgb(27, 145, 147);
+    background-color: rgb(171, 185, 185);
+    border-radius: 5px;
+}
+    .commentbox h4{
+        font-size: 12pt;
+    }
+    .commentbox p{
+        font-size: 8pt;
+    }
+
+.commentcontent {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+#comment_form {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#comment_form button{
+    text-shadow: 2px 2px 4px rgb(27, 145, 147);
+    box-shadow: 2px 2px 4px rgb(27, 145, 147);
+    text-align: center;
+    background-color:  rgb(27, 145, 147);
+    color: white;
+    box-shadow: 2px 2px 4px rgb(27, 145, 147);
+    border-radius: 5px;
+    border: black solid 1px;
+    font-size: 6pt;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Amadon</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <h1 id="mainhead">Amadon Store!</h1>
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in all_products %}
+            <tr>
+                <form action="/process" id="shoppingform" method="post">
+                    {% csrf_token %}
+                    <td class="tabletext">{{product.description}}</td>
+                    <td class="tabletext"><input type="hidden" name="specific_id" value="{{product.id}}">${{product.price}}</td>
+                    <td class="tabletext"><select name="quantity">
+                        <option value="1">1</option>              
+                        <option value="2">2</option>              
+                        <option value="3">3</option>              
+                        <option value="4">4</option>              
+                        <option value="5">5</option>              
+                        <option value="6">6</option>              
+                        <option value="7">7</option>              
+                        <option value="8">8</option>              
+                        <option value="9">9</option>              
+                        <option value="10">10</option>              
+                    </select></td>
+                    <td><button type="submit" id="button">Buy!</button></td>
+                </form>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p id="footer">(Flush all previous purchases by clicking <a href="/flush">here</a>)</p>
+</body>
+</html>

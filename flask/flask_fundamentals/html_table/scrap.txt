@@ -1,0 +1,10 @@
+<table>
+#         {% for i in students %}
+#         <p>{{i}}</p>
+#             <tr class="row">
+#                 {% for j in range(len(students)) %}
+#                 <td class="column">{{students[j]['first_name']}}</td>
+#                 {% endfor %}
+#             </tr>
+         {% endfor %}
+# </table>
